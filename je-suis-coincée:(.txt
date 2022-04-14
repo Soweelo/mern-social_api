@@ -1,0 +1,18 @@
+
+********************JE NE RESTE PAS COINCÉE ᕕ( ᐛ )ᕗ      ********************
+
+--> npm start error  code: 'EADDRINUSE', il faut deconnecter le port utilisé (ici 8800) en tuant le PID:
+        trouve le PID en écoutant : sudo lsof -i :8800
+            ex:     COMMAND   PID USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+                      node    66557  oem   22u  IPv6 674385      0t0  TCP *:8800 (LISTEN)
+                ici le PID est 66557
+        kill it: sudo kill -9 66557
+        prêt à restart npm!
+
+
+--> la connection à Mongodb marche mais pas les requêtes!!! :(
+    aller dans SECURITY>Network Acess du menu  gauche de Mongodb et vérifier les adresses IP authorisées
+
+    
+--> j'ai une collection avec des uniques id et je veux rajouter un nouvel objet qui partagera une de ses clefs avec un autre objet. Typiquement un deuxième post pour un même user. Et ça ne matrche pas car renvoie un problème de duplicate key.
+    Hélas il faut supprimer la collection problématique :( mais après ça fonctionne! 
